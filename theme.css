@@ -851,7 +851,10 @@ body {
     --callout-icon: '✍️';
     --callout-color: var(--color-yellow-rgb)
   }
-
+    .callout[data-callout="quote"] {
+    --callout-icon: '🗨️';
+    --callout-color: var(--color-blue-rgb)
+  }
 /* -------- make the settings look Antype-ish ------ */
 body {
     --modal-width: calc(100% - 32px);
@@ -1203,7 +1206,7 @@ settings:
         title: Gradient Background
         description: Make the note appear to be floating over an Anytype-style gradient background.
         type: class-toggle
-        default: true
+        default: false
     -
         id: heading-style
         title: Heading Style
