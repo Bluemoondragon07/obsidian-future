@@ -14,4 +14,5 @@ A simple theme based on **Anytype** note-taking software.
 
 # Credits
 - Creators of *Anytype*, for making such a beautiful and inspirational app!
+- [gavinmn](https://github.com/gavinmn/obsidian-theme/blob/main/safaritabs.css) for the safaritabs CSS snippet.
 - All of you theme developers for inspiring me to also make themes! 😁
