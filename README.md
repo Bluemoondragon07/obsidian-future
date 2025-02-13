@@ -1,8 +1,8 @@
 
 ![](bigpic.jpeg)
 
-# Anytype 
-A simple theme based on **Anytype** note-taking software. 
+# Future
+A simple, futuristic theme inspired by **Anytype** note-taking software. 
 
 ## Features
 > Note: requires Style Settings plugin
