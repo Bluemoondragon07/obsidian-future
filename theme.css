@@ -653,8 +653,8 @@ body {
     --h5-bg: var(--color-purple-rgb);
     --h6-bg: var(--color-pink-rgb);
 
-    --gradient-2-light: rgb(255, 248, 153);
-    --gradient-1-light:  rgb(238, 195, 64);
+    --gradient-1-light: rgb(255, 248, 153);
+    --gradient-2-light:  rgb(255, 202, 202);
 
     --gradient-1-dark:  rgb(55, 41, 15);
     --gradient-2-dark:rgb(149, 116, 59);
