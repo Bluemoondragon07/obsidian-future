@@ -1,4 +1,4 @@
-/* ---- OBSIDIAN FUTURE THEME -------- */
+/* ---- ANYTYPE-INSPIRED "FUTURE" THEME -------- */
 /* by Ha'ani Whitlock */
 /* started this theme sometime in February, I think. And of course, year 2023. */
 
@@ -8,7 +8,7 @@ body {
   --inline-title-color: var(--text-normal);
   --line-height-normal: 24px;
   --divider-width: 0px;
-  --file-line-width: 80%;
+  --file-line-width: 820px;
   --radius-s: 0.5em;
   --font-interface-theme: 'Inter';
   --font-text-theme: 'Inter';
@@ -19,6 +19,8 @@ body {
   --titlebar-background-focused: var(--color-accent-2);
   --titlebar-text-color-focused: var(--text-on-accent);
 }
+
+
 /* fix links with aliases */
 a[aria-label] {
     text-decoration-style: solid !important;
@@ -36,6 +38,7 @@ a[aria-label] {
     margin: auto;
 }
 
+/*  some styling for panes with gradient background */
 .gradient-bg .workspace,
 .gradient-bg .workspace-split.mod-horizontal.mod-sidedock.mod-left-split,
 .gradient-bg .workspace-split.mod-root{
@@ -45,11 +48,45 @@ a[aria-label] {
     border-radius: var(--radius-m);
     margin: auto;
     background-color: transparent !important;
-    max-width: 90%;
+    max-width: 95%;
     max-height: 95%;
 } 
+
+/* optional transparent background */
+body {
+    --page-transparency-custom: 1;
+}
+.theme-light.gradient-bg {
+/* make borders more visible against a transparent background */
+--background-modifier-border: rgba(1,1,1,0.2) !important;
+}
+.theme-light.gradient-bg.custom-transparency .workspace-leaf-content, 
+.theme-light.gradient-bg.custom-transparency .view-content,
+.theme-light.gradient-bg.custom-transparency .view-header {
+background-color: rgba(255, 255, 255,var(--page-transparency-custom)) !important;
+} .gradient-bg.custom-transparency .nav-header, .gradient-bg.custom-transparency .nav-files-container,.gradient-bg.custom-transparency .workspace-leaf,  {
+    background-color: transparent !important;
+}
+
+.theme-dark.gradient-bg.custom-transparency {
+/* make borders more visible against a transparent background */
+--background-modifier-border: rgba(255,255,255,0.17) !important;
+}
+.theme-dark.gradient-bg.custom-transparency .workspace-leaf-content,
+.theme-dark.gradient-bg.custom-transparency .view-content,
+.theme-dark.gradient-bg.custom-transparency .view-header {
+background-color: rgba(1, 1, 1,var(--page-transparency-custom)) !important;
+} 
+
+
 .gradient-bg {
     --icon-color: var(--text-normal);
+}
+
+.gradient-bg .workspace-leaf-content[data-type=markdown] {
+    max-width: var(--file-line-width);
+    margin: auto;
+    border-radius: var(--radius-l);
 }
 
 /* ------ vault profile ----- */
@@ -248,6 +285,10 @@ body {
 
 
 /* folder icons */
+body {
+--note-icon: '📝';
+--folder-icon: '📁';
+}
 
 /* iconize plugin support */
 .iconize-icon {
@@ -260,7 +301,7 @@ body {
   transform: scale(1.05);
   transform: translateY(10px);
 } .tree-item-self.nav-folder-title:not(:has(.iconize-icon))::before{
-    content: '📂';
+    content: var(--folder-icon);
     font-size: 20px;
     background-color: var(--background-secondary);
   padding: 10px;
@@ -269,7 +310,7 @@ body {
   display: block;
 }
 .tree-item-self.nav-file-title:not(:has(.iconize-icon))::before {
-    content: '📝';
+    content: var(--note-icon);
     font-size: 20px;
     background-color: var(--background-secondary);
   padding: 10px;
@@ -498,6 +539,12 @@ body {
     --accent-h: 226 !important;
     --accent-s: 78% !important;
     --accent-l: 57% !important;
+
+    --gradient-1-light: rgb(70, 106, 251);
+    --gradient-2-light:  rgb(137, 226, 255);
+
+    --gradient-1-dark:  rgb(23, 26, 48);
+    --gradient-2-dark:rgb(63, 76, 160);
 } .accent-purple, body {
     --h1-bg: var(--color-purple-rgb);
     --h2-bg: var(--color-pink-rgb);
@@ -505,6 +552,8 @@ body {
     --h4-bg: var(--color-orange-rgb);
     --h5-bg: var(--color-yellow-rgb);
     --h6-bg: var(--color-green-rgb);
+
+
 }  .headings-colored, .accent-purple.headings-colored{
     --h3-color: var(--color-red);
     --h4-color: var(--color-orange);
@@ -525,6 +574,11 @@ body {
     --h4-bg: var(--color-green-rgb);
     --h5-bg: var(--color-cyan-rgb);
     --h6-bg: var(--color-blue-rgb);
+    --gradient-1-light: rgb(255, 173, 173);
+    --gradient-2-light:  rgb(255, 212, 144);
+
+    --gradient-1-dark:  rgb(110, 90, 49);
+    --gradient-2-dark:rgb(86, 54, 54);
 } .accent-red.headings-colored {
     --h1-color: var(--color-red);
     --h2-color: var(--color-orange);
@@ -545,6 +599,12 @@ body {
     --h4-bg: var(--color-purple-rgb);
     --h5-bg: var(--color-pink-rgb);
     --h6-bg: var(--color-red-rgb);
+
+    --gradient-2-light: rgb(224, 255, 84);
+    --gradient-1-light:  rgb(100, 176, 129);
+
+    --gradient-1-dark:  rgb(97, 110, 49);
+    --gradient-2-dark:rgb(54, 86, 70);
 } .accent-green.headings-colored {
     --h1-color: var(--color-green);
     --h2-color: var(--color-cyan);
@@ -565,6 +625,12 @@ body {
     --h4-bg: var(--color-cyan-rgb);
     --h5-bg: var(--color-blue-rgb);
     --h6-bg: var(--color-purple-rgb);
+
+    --gradient-1-light: rgb(255, 241, 137);
+    --gradient-2-light:  rgb(255, 185, 119);
+
+    --gradient-1-dark:  rgb(74, 54, 36);
+    --gradient-2-dark:rgb(178, 137, 35);
 }  .accent-orange.headings-colored {
     --h1-color: var(--color-orange);
     --h2-color: var(--color-yellow);
@@ -586,6 +652,13 @@ body {
     --h4-bg: var(--color-blue-rgb);
     --h5-bg: var(--color-purple-rgb);
     --h6-bg: var(--color-pink-rgb);
+
+    --gradient-2-light: rgb(255, 248, 153);
+    --gradient-1-light:  rgb(238, 195, 64);
+
+    --gradient-1-dark:  rgb(55, 41, 15);
+    --gradient-2-dark:rgb(149, 116, 59);
+
 }  .accent-yellow.headings-colored {
     --h5-color: var(--color-purple);
     --h6-color: var(--color-pink);
@@ -606,6 +679,12 @@ body {
     --h4-bg: var(--color-orange-rgb);
     --h5-bg: var(--color-red-rgb);
     --h6-bg: var(--color-pink-rgb);
+
+    --gradient-1-light: rgb(152, 218, 228);
+    --gradient-2-light:  rgb(200, 255, 230);
+
+    --gradient-1-dark:  rgb(49, 94, 110);
+    --gradient-2-dark:rgb(54, 86, 74);
 }  .accent-cyan.headings-colored {
     --h5-color: var(--color-red);
     --h4-color: var(--color-orange);
@@ -625,6 +704,13 @@ body {
     --h3-bg: var(--color-green-rgb);
     --h4-bg: var(--color-yellow-rgb);
     --h5-bg: var(--color-orange-rgb);
+
+    --gradient-1-light: rgb(147, 201, 244);
+    --gradient-2-light:  rgb(237, 251, 255);
+
+    --gradient-1-dark:  rgb(8, 32, 57);
+    --gradient-2-dark:rgb(46, 82, 121);
+
     --h6-bg: var(--color-red-rgb);
 }  .accent-blue.headings-colored {
     --h6-color: var(--color-red);
@@ -649,9 +735,9 @@ body {
     --h6-bg: var(--color-yellow-rgb);
 
     --gradient-1-light: rgb(255, 208, 120);
-    --gradient-2-light:  rgb(233, 177, 220);
+    --gradient-2-light:  rgb(246, 211, 255);
 
-    --gradient-1-dark:  rgb(110, 90, 49);
+    --gradient-1-dark:  rgb(53, 49, 110);
     --gradient-2-dark:rgb(86, 54, 80);
 }  .accent-pink.headings-colored {
     --h2-color: var(--color-purple);
@@ -664,7 +750,7 @@ body {
 }
 
 
-.headings-bland {
+.headings-blander {
     --h1-bg: inherit;
     --h2-bg: inherit;
     --h3-bg: inherit;
@@ -678,6 +764,7 @@ body {
     --h2-color: inherit;
     --h1-color: inherit;
 }
+
 
 .theme-light {
     --workspace-background: linear-gradient(0deg,var(--gradient-1-light), var(--gradient-2-light));
@@ -748,30 +835,91 @@ transform: scale(0.8);
 /* = = = Headings = = = */
 body {
     --heading-opacity: 0.2;
+    --heading-radius: 4px;
 }
 
 [data-heading], .HyperMD-header {
-    padding: 5px 10px 5px 10px;
+    padding: 5px 10px 5px 10px !important;
+    border-radius: var(--heading-radius);
 }
 
- h1,  .HyperMD-header-1 {
+
+ h1,  .HyperMD-header-1, a.heading-level-1 {
     background-color: rgba(var(--h1-bg), var(--heading-opacity));
 }
- h2,  .HyperMD-header-2 {
+ h2,  .HyperMD-header-2, a.heading-level-2 {
     background-color: rgba(var(--h2-bg), var(--heading-opacity));
 }
- h3,  .HyperMD-header-3 {
+ h3,  .HyperMD-header-3, a.heading-level-3 {
     background-color: rgba(var(--h3-bg), var(--heading-opacity));
 }
- h4,  .HyperMD-header-4 {
+ h4,  .HyperMD-header-4, a.heading-level-4 {
     background-color: rgba(var(--h4-bg), var(--heading-opacity));
 }
- h5,  .HyperMD-header-5 {
+ h5,  .HyperMD-header-5, a.heading-level-5 {
     background-color: rgba(var(--h5-bg), var(--heading-opacity));
 }
- h6,  .HyperMD-header-6 {
+ h6,  .HyperMD-header-6, a.heading-level-6 {
     background-color: rgba(var(--h6-bg), var(--heading-opacity));
 }
+li.hovered[data-heading-line] a, li.highlight[data-heading-line] a {
+  --heading-opacity: 0.3;
+}
+
+.cm-header {
+  color: inherit;
+}
+
+/* colored heading text only Style setting (bland headings / colorless headings) */
+.headings-bland h1,  .headings-bland .HyperMD-header-1 {
+    color: rgba(var(--h1-bg), 100%);
+    background-color: transparent;
+}
+.headings-bland h2, .headings-bland .HyperMD-header-2 {
+    color: rgba(var(--h2-bg), 100%);
+    background-color: transparent;
+}
+.headings-bland h3, .headings-bland  .HyperMD-header-3 {
+    color: rgba(var(--h3-bg), 100%);
+    background-color: transparent;
+}
+.headings-bland h4, .headings-bland .HyperMD-header-4 {
+    background-color: transparent;
+    color: rgba(var(--h4-bg), 100%);
+}
+.headings-bland h5, .headings-bland .HyperMD-header-5 {
+    background-color: transparent;
+    color: rgba(var(--h5-bg), 100%);
+}
+.headings-bland h6, .headings-bland .HyperMD-header-6 {
+    background-color: transparent;
+    color: rgba(var(--h6-bg), 100%);
+}
+
+/* adjust */
+
+[data-heading-line] * {
+  border-radius: 3px;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+} li[data-heading-line] {
+  padding: 0;
+  width: fit-content;
+  margin: 0 !important;
+} li.hovered[data-heading-line], li.highlight[data-heading-line] {
+  background: transparent !important;
+}
+
+
+li.hovered[data-heading-line] a, li.highlight[data-heading-line] a {
+  --heading-opacity: 0.3;
+}
+
+.cm-header {
+  color: inherit;
+}
+
 
 /* = = = Callouts = = = */
 body {
@@ -793,7 +941,8 @@ body {
     content: var(--callout-icon);
 }
 .callout {
-    --callout-icon: '✏️';
+    --callout-icon: '💡';
+    --callout-color: var(--color-yellow-rgb);
 }
 .callout[data-callout="abstract"],
 .callout[data-callout="summary"],
@@ -944,6 +1093,15 @@ border-radius: 0 0 var(--radius-s) var(--radius-s);
    overflow: hidden;
 }
 
+/* hide some style settings conditionally */
+.style-settings-container:not(:has([data-id="gradient-bg"] .checkbox-container.is-enabled )) [data-id="custom-transparency"] {
+    display: none;
+}
+.style-settings-container:not(:has([data-id="gradient-bg"] .checkbox-container.is-enabled )) [data-id="page-transparency-custom"],
+.style-settings-container:not(:has([data-id="custom-transparency"] .checkbox-container.is-enabled )) [data-id="page-transparency-custom"] {
+    display: none;
+}
+
 /* dropdowns */
 select.dropdown:focus {
     box-shadow: none;
@@ -960,6 +1118,13 @@ select.dropdown {
     box-shadow: none;
     background-color: var(--background-modifier-hover);
 }
+
+/* toggles */
+body {
+    --toggle-thumb-height: 8px;
+    --toggle-thumb-width: 8px;
+}
+
 
 /* change overall modal spacing */
 .modal.mod-settings .vertical-tab-header {
@@ -1157,10 +1322,12 @@ border: 2px solid var(--tag-rb-text-dark);
     border: 2px solid var(--tag-rb-text-light);
 }
 
+
+
 /* @settings
 
-name: Anytype Theme
-id: anytype-theme
+name: Future Theme
+id: future-theme
 settings:
     -
         id: oled-style
@@ -1208,6 +1375,22 @@ settings:
         type: class-toggle
         default: false
     -
+        id: custom-transparency
+        title: custom pane transparency
+        description: customize the note pane transparency in gradient background mode.
+        type: class-toggle
+        default: false
+    -
+        id: page-transparency-custom
+        title: Pane Transparency
+        description: control the transparency of note panes when gradient background is enabled.
+        type: variable-number-slider
+        min: 0
+        max: 1
+        step: 0.01
+        default: 1
+
+    -
         id: heading-style
         title: Heading Style
         type: class-select
@@ -1221,8 +1404,11 @@ settings:
                 label: Extra Colorful
                 value: headings-colored
             -
-                label: Bland
+                label: Less Colorful
                 value: headings-bland
+            -
+                label: Colorless
+                value: headings-blander
     -
         id: more-styles-heading
         title: More Styles
