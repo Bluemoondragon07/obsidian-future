@@ -48,7 +48,7 @@ a[aria-label] {
     border-radius: var(--radius-m);
     margin: auto;
     background-color: transparent !important;
-    max-width: 95%;
+    max-width: 92%;
     max-height: 95%;
 } 
 
