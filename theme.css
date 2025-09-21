@@ -64,7 +64,7 @@ body {
 .theme-light.gradient-bg.custom-transparency .view-content,
 .theme-light.gradient-bg.custom-transparency .view-header {
 background-color: rgba(255, 255, 255,var(--page-transparency-custom)) !important;
-} .gradient-bg.custom-transparency .nav-header, .gradient-bg.custom-transparency .nav-files-container,.gradient-bg.custom-transparency .workspace-leaf,  {
+} .gradient-bg.custom-transparency .nav-header, .gradient-bg.custom-transparency .nav-files-container,.gradient-bg.custom-transparency .workspace-leaf  {
     background-color: transparent !important;
 }
 
